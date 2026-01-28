@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# For localhost: replace /bookpublishingpulse/ with your local folder name
+RewriteBase /bookpublishingpulse/
+
+# Ignore real files and folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all to index.php
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]
